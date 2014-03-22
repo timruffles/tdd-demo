@@ -5,6 +5,10 @@ describe("Story UI",function() {
     var storyView;
 
     before(function() {
+      // since all our tests are purely read-only,
+      // we don't need to make this a beforeEach.
+      // The setup is very fast though, so in this case it wouldn't matter
+
       storyView = new StoryView({
         collection: [
           {
@@ -21,9 +25,11 @@ describe("Story UI",function() {
           }
         ]
       })
+
+      storyView.render();
     })
 
-    it("stories are visible",function() {
+    it.only("stories are visible",function() {
       assert.equal($(".story",storyView.el).length,2)
     })
 
@@ -72,3 +78,5 @@ describe("Story UI",function() {
   })
 
 })
+
+var assert = chai.assert;
