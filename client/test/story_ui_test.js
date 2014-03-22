@@ -39,12 +39,12 @@ describe("Story UI",function() {
       assert.equal(storyEl(123).text(),getStory(123).title);
     })
 
-    it.only("links stories to URLs",function() {
+    it("links stories to URLs",function() {
       var withUrl = storyEl(123).find("[href='" + getStory(123).url + "']");
       assert.equal(withUrl.length,1);
     })
 
-    it("displays scores",function() {
+    it.only("displays scores",function() {
       var number = parseInt(storyEl(123).find(".score").val());
       assert.equal(number,getStory(123).score);
     })
