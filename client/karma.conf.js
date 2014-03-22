@@ -7,6 +7,7 @@ module.exports = function(config) {
     files: [
       'node_modules/chai/chai.js',
       'vendor/*.js',
+      'test/setup.js',
       'src/*.js',
       'test/*_test.js'
     ],
