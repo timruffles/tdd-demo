@@ -29,11 +29,11 @@ describe("Story UI",function() {
       storyView.render();
     })
 
-    it.only("stories are visible",function() {
+    it("stories are visible",function() {
       assert.equal($(".story",storyView.el).length,2)
     })
 
-    it("displays titles",function() {
+    it.only("displays titles",function() {
       // using .text() to ignore the HTML structure
       assert.match(storyEl(123).text(),getStory(123).title);
     })
