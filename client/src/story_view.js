@@ -19,7 +19,9 @@ var StoryView = (function() {
     return [
       "<% _.each(collection,function(item) { %>",
         "<li class='story' data-id='<%= item.id %>'>",
-          "<%= item.title %>",
+          "<a href='<%= item.url %>'>",
+            "<%= item.title %>",
+          "</a>",
         "</li>",
       "<% }) %>"
     ].join("")

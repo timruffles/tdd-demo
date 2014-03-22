@@ -40,7 +40,7 @@ describe("Story UI",function() {
     })
 
     it.only("links stories to URLs",function() {
-      var withUrl = storyEl(123).find("[href=" + getStory(123).url + "]");
+      var withUrl = storyEl(123).find("[href='" + getStory(123).url + "']");
       assert.equal(withUrl.length,1);
     })
 
