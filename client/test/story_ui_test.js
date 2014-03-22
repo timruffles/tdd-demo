@@ -45,7 +45,7 @@ describe("Story UI",function() {
     })
 
     it.only("displays scores",function() {
-      var number = parseInt(storyEl(123).find(".score").val());
+      var number = parseInt(storyEl(123).find(".score").text());
       assert.equal(number,getStory(123).score);
     })
 

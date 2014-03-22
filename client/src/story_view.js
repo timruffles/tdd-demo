@@ -22,6 +22,9 @@ var StoryView = (function() {
           "<a href='<%= item.url %>'>",
             "<%= item.title %>",
           "</a>",
+          "<span class=score>",
+            "<%= item.score %>",
+          "</span>",
         "</li>",
       "<% }) %>"
     ].join("")
