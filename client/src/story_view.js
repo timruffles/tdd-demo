@@ -9,7 +9,11 @@ var StoryView = (function() {
   StoryView.prototype = {
     template: _.template(template()),
     render: function() {
-      this.el.innerHTML = this.template(this);
+      this.el.innerHTML = this.template({
+        collection: this.collection.slice().sort(function(a,b) {
+          return b.score - a.score;
+        })
+      });
     }
   }
 

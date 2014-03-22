@@ -53,7 +53,7 @@ describe("Story UI",function() {
       var ids = $("[data-id]",storyView.el).map(function(i,el) {
         return $(el).attr("data-id")
       }).get();
-      assert.equal(['600','123'],ids);
+      assert.deepEqual(['600','123'],ids);
     })
 
     // test helper functions, so we can change the implementation
