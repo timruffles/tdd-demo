@@ -33,13 +33,13 @@ describe("Story UI",function() {
       assert.equal($(".story",storyView.el).length,2)
     })
 
-    it.only("displays titles",function() {
+    it("displays titles",function() {
       // using .text() to ignore the HTML structure
       console.log(storyEl(123).length)
       assert.equal(storyEl(123).text(),getStory(123).title);
     })
 
-    it("links stories to URLs",function() {
+    it.only("links stories to URLs",function() {
       var withUrl = storyEl(123).find("[href=" + getStory(123).url + "]");
       assert.equal(withUrl.length,1);
     })
