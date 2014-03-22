@@ -18,7 +18,9 @@ var StoryView = (function() {
   function template() {
     return [
       "<% _.each(collection,function(item) { %>",
-        "<li class='story'></li>",
+        "<li class='story' data-id='<%= item.id %>'>",
+          "<%= item.title %>",
+        "</li>",
       "<% }) %>"
     ].join("")
   }

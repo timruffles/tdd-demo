@@ -35,7 +35,8 @@ describe("Story UI",function() {
 
     it.only("displays titles",function() {
       // using .text() to ignore the HTML structure
-      assert.match(storyEl(123).text(),getStory(123).title);
+      console.log(storyEl(123).length)
+      assert.equal(storyEl(123).text(),getStory(123).title);
     })
 
     it("links stories to URLs",function() {
@@ -61,10 +62,12 @@ describe("Story UI",function() {
     // change if we move to a collection view/item view collab, or 
     // we changed the collection data-structure).
     function storyEl(id) {
-      return $("[data-id=" + id + "]",storyView.el);
+      return $("[data-id=" + id + "]",storyView.el).eq(0);
     }
     function getStory(id) {
-      return _.findWhere(storyEl.collection,{id: id});
+      return _.find(storyView.collection,function(story) {
+        return story.id === id;
+      })
     }
 
   })
