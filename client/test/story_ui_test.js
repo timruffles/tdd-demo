@@ -44,16 +44,16 @@ describe("Story UI",function() {
       assert.equal(withUrl.length,1);
     })
 
-    it.only("displays scores",function() {
+    it("displays scores",function() {
       var number = parseInt(storyEl(123).find(".score").text());
       assert.equal(number,getStory(123).score);
     })
 
-    it("sorts stories by score, highest to lowest",function() {
+    it.only("sorts stories by score, highest to lowest",function() {
       var ids = $("[data-id]",storyView.el).map(function(i,el) {
-        return el.attr("data-id")
-      });
-      assert.equal([600,123],ids);
+        return $(el).attr("data-id")
+      }).get();
+      assert.equal(['600','123'],ids);
     })
 
     // test helper functions, so we can change the implementation
