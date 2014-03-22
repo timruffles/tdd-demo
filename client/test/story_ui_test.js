@@ -36,7 +36,7 @@ describe("Story UI",function() {
     it("displays titles",function() {
       // using .text() to ignore the HTML structure
       console.log(storyEl(123).length)
-      assert.equal(storyEl(123).text(),getStory(123).title);
+      assert.match(storyEl(123).text(),new RegExp(getStory(123).title));
     })
 
     it("links stories to URLs",function() {
@@ -49,7 +49,7 @@ describe("Story UI",function() {
       assert.equal(number,getStory(123).score);
     })
 
-    it.only("sorts stories by score, highest to lowest",function() {
+    it("sorts stories by score, highest to lowest",function() {
       var ids = $("[data-id]",storyView.el).map(function(i,el) {
         return $(el).attr("data-id")
       }).get();
