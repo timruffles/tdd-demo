@@ -1,0 +1,33 @@
+#!/bin/bash
+
+client() {
+	karma start
+}
+
+api() {
+  cd api
+	mocha $test_options test/*_test.js
+}
+
+main() {
+
+  test_options=${@:-1}
+
+  command=$1
+
+  if [[ "$command" == "client" ]]; then
+    client
+  elif [[ "$command" == "api" ]]; then
+    api
+  else
+    cat <<USAGE
+  Useage: bin/run-tests TYPE
+
+  Types:
+    api
+    client
+USAGE
+  fi
+}
+
+main $@
