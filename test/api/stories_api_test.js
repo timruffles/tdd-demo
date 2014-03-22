@@ -16,5 +16,4 @@ describe("Story API",function() {
 
   })
 
-
 })
