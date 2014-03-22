@@ -79,12 +79,12 @@ describe("Story UI",function() {
 
     it("downvoting a story sends a downvote command",function() {
       storyEl(123).find(".down").click();
-      verifyVote("up");
+      verifyVote("down");
     })
 
     function verifyVote(voteType) {
-      assert.calledWith(postSpy,{
-        method: "POST",
+      assert.calledWithMatch(postSpy,{
+        type: "post",
         url: "/stories/123/votes",
         data: {
           vote: voteType
