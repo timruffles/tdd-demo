@@ -19,7 +19,7 @@ describe("Story UI",function() {
           },
           {
             id: 600,
-            title: "Learn to code in your tea break, by someone who's never coded",
+            title: "'You can learn to code in your tea break', by someone who's never coded",
             score: 20,
             url: "http://www2.tories.org.uk"
           }
