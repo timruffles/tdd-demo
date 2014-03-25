@@ -24,7 +24,7 @@ describe("Story API",function() {
         .end(done);
     })
 
-    it.only("rejects stories with invalid URLS",function(done) {
+    it("rejects stories with invalid URLS",function(done) {
       submit({
           title: "Why Javascript is like a burrito",
           url: "this isn't a URL"
