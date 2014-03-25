@@ -15,5 +15,8 @@
     "test": "mocha"
   },
   "author": "",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "supertest": "~0.10.0"
+  }
 }
