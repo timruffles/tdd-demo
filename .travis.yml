@@ -3,7 +3,7 @@ node_js:
   - "0.11"
   - "0.10"
 install:
-  - cd api && npm install
-  - cd client && npm install
+  - cd api && npm install && cd -
+  - cd client && npm install && cd -
 script:
   - cd api && mocha
